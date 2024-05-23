@@ -1,0 +1,25 @@
+---
+title: "Final Project"
+author: "Ethan Gutterman, Joshua Aguilar, Kaden Emerson, Dominic Tangaan"
+format: 
+  html:
+    embed-resources: true
+    code-tools: true
+    toc: true
+    number-sections: true
+editor: source
+execute: 
+  error: true
+  echo: true
+  message: false
+  warning: false
+---
+
+```{r, setup}
+library(tidyverse)
+poverty_data<-read_csv("extreme_poverty_percent_people_below_215_a_day.csv")
+
+footprint_date<-read.csv("matfootp_cap.csv")
+
+
+```
