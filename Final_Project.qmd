@@ -21,5 +21,24 @@ poverty_data<-read_csv("extreme_poverty_percent_people_below_215_a_day.csv")
 
 footprint_date<-read.csv("matfootp_cap.csv")
 
-
 ```
+
+```{r}
+poverty_data <- poverty_data |>
+  select(country, "1970":"2019")
+```
+
+```{r}
+footprint_date <- footprint_date |>
+  rename_with(~ str_remove(., "^X")) |>
+  left_join(poverty_data, join_by(country))
+```
+
+```{r}
+footprint_date <- footprint_date |>
+    pivot_longer(cols = "1970.x":"2019.y",
+               names_to = "Year",
+               values_to = "Carbon Footprint Rate (x) and Poverty Rate (y)") |>
+  group_by(country, Year)
+```
+
