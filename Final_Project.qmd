@@ -25,20 +25,24 @@ footprint_date<-read.csv("matfootp_cap.csv")
 
 ```{r}
 poverty_data <- poverty_data |>
-  select(country, "1970":"2019")
+  select(country, "1970":"2019") |>
+  pivot_longer(cols = "1970":"2019",
+               names_to = "year",
+               values_to = "% people below $2.15 a day")
 ```
 
 ```{r}
 footprint_date <- footprint_date |>
   rename_with(~ str_remove(., "^X")) |>
-  left_join(poverty_data, join_by(country))
-```
-
-```{r}
-footprint_date <- footprint_date |>
-    pivot_longer(cols = "1970.x":"2019.y",
-               names_to = "Year",
-               values_to = "Carbon Footprint Rate (x) and Poverty Rate (y)") |>
-  group_by(country, Year)
+  pivot_longer(cols = "1970":"2019",
+               names_to = "year",
+               values_to = "material footprint per capita (tonnes)") |>
+  full_join(poverty_data, join_by(country, year)) |>
+  filter(!is.na(`% people below $2.15 a day`)) |>
+  filter(!is.na(`material footprint per capita (tonnes)`)) |>
+  mutate(`% people below $2.15 a day` =
+           as.numeric(`% people below $2.15 a day`)) |>
+  mutate(`material footprint per capita (tonnes)` =
+           as.numeric(`material footprint per capita (tonnes)`))
 ```
 
