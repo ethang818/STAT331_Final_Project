@@ -20,7 +20,7 @@ execute:
 
 The two datasets, that will be analyzed with a linear model, included the extreme poverty rates of 159 countries, defined as the percentage of people with an income below \$2.15 per day, and the material footprints of 169 countries, defined as the tonnes of raw materials required to meet a countries consumption demands per capita (UNSD, n.d.). The material footprint dataset includes information from 1970 until 2019 and the poverty rate dataset includes information from 1963 until 2022. Due to this discrepancy, we will only consider the relationship between these variables within the timeframe of 1970 to 2019. Material footprint is a popular metric to consider, along with carbon footprint and GDP, when analyzing a country’s productivity and impact on the planet. The United Nations (UN) touches on material footprint in its 12th of 17 Sustainable Development Goals, “Ensur\[ing\] Sustainable Consumption and Production Patterns” (UNSD, n.d.). They discuss their intent to decrease the global material footprint, which has been rapidly rising in the past few decades. Specifically, the UN has noted that many high-income countries have increasing material footprints that are supported by imported raw materials from poorer countries. This results in a much higher footprint in wealthier countries, and lower footprints as wealth decreases, as visualized in Figure 1.
 
-[![**Figure 1.** Material footprint per capita (tonnes) from 2000 to 2017, across varying income levels and the global average (UNSD, n.d.).](images/Screenshot 2024-05-27 110017.png)](https://unstats.un.org/sdgs/report/2019/goal-12/#:~:text=%E2%80%9CMaterial%20footprint%E2%80%9D%20refers%20to%20the,the%20material%20needs%20of%20people.)
+[![Figure 1. Material footprint per capita (tonnes) from 2000 to 2017, across varying income levels and the global average (UNSD, n.d.).](images/Screenshot%202024-05-27%20110017.png)](https://unstats.un.org/sdgs/report/2019/goal-12/#:~:text=%E2%80%9CMaterial%20footprint%E2%80%9D%20refers%20to%20the,the%20material%20needs%20of%20people.)
 
 With extreme poverty rate as our explanatory variable, and the established relationship between income and material footprint, it is safe to assume that our linear relationship will follow a similar trend. As extreme poverty percentage increases, it is expected that material consumption will decrease.
 
@@ -56,5 +56,53 @@ footprint_date <- footprint_date |>
   mutate(`% people below $2.15 a day` =
            as.numeric(`% people below $2.15 a day`)) |>
   mutate(`material footprint per capita (tonnes)` =
-           as.numeric(`material footprint per capita (tonnes)`))
+           as.numeric(`material footprint per capita (tonnes)`)) |>
+  mutate(year =
+           as.numeric(year))
+```
+
+## Linear Regression
+
+### Data Visualization
+
+```{r}
+first_model <- footprint_date |>
+  ggplot(aes(x = `% people below $2.15 a day`, 
+             y = `material footprint per capita (tonnes)`)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x)
+first_model
+
+lin_mod1 <-
+  lm(`material footprint per capita (tonnes)` ~ `% people below $2.15 a day`, data = footprint_date)
+summary(lin_mod1)
+```
+
+```{r}
+footprint_date_new <- footprint_date |>
+  rename(footprint = `material footprint per capita (tonnes)`, 
+         poverty_perc = `% people below $2.15 a day`) |>
+  mutate(log_footprint = log(footprint))
+
+  log_model <- footprint_date_new |>
+  ggplot(aes(x = poverty_perc, 
+             y = log_footprint)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x)
+log_model
+
+lin_mod_log <-
+  lm(log_footprint ~ poverty_perc, data = footprint_date_new)
+summary(lin_mod_log)
+```
+
+```{r}
+plot_time <- footprint_date_new |>
+  mutate(decade =  10 * floor(year/10)) |>
+  ggplot(aes(x = poverty_perc, 
+             y = log_footprint)) +
+  geom_point() +
+  geom_smooth(method = lm, formula = y ~ x) +
+  facet_wrap(~ decade)
+plot_time
 ```
