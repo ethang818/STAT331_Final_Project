@@ -106,3 +106,5 @@ plot_time <- footprint_date_new |>
   facet_wrap(~ decade)
 plot_time
 ```
+
+### Data Visualization
