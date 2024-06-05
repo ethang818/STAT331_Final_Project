@@ -26,6 +26,8 @@ With extreme poverty rate as our explanatory variable, and the established relat
 
 ```{r, setup}
 library(tidyverse)
+library(broom)
+library(kableExtra)
 poverty_data<-read_csv("extreme_poverty_percent_people_below_215_a_day.csv")
 
 footprint_date<-read.csv("matfootp_cap.csv")
@@ -107,4 +109,35 @@ plot_time <- footprint_date_new |>
 plot_time
 ```
 
-### Data Visualization
+# Calculate variances
+
+```{r}
+response_variance <- var(footprint_date_new$log_footprint)
+fitted_values <- fitted(lin_mod_log)
+fitted_variance <- var(fitted_values)
+residuals_variance <- var(residuals(lin_mod_log))
+```
+
+# Data frame for the variances
+
+```{r}
+variance_table <- data.frame(  `Variance Type` = c("Response Values", "Fitted Values", "Residuals"),  `Variance` = c(response_variance, fitted_variance, residuals_variance))
+```
+
+# Table
+
+```{r}
+variance_table |>  kable("html", col.names = c("Variance Type", "Variance"), digits = 4) |>  
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"))|>  
+row_spec(0, bold = TRUE, color = "white", background = "turquoise")
+```
+
+# Get the R-squared value
+
+```{r}
+r_squared <- summary(lin_mod_log)$r.squared
+```
+
+The Response Values from our regression model have a variability of 0.7733. A higher variance indicates a greater dispersion of the data points from the mean of the response variables. With a variability of 0.7733, our response values have a moderate level of variability from the mean.
+A variance of 0.3497 in our fitted values. With such a small variance, this indicates that the model does not explain a significant portion of variability in the response variable.
+A variance of 0.4236 indicates that a models predictions are not close to the actual observations, which means that our model may not be the best for representing this data.
