@@ -16,7 +16,7 @@ execute:
   warning: false
 ---
 
-## Data Description and Initial Assumptions
+# Data Description and Initial Assumptions
 
 The two datasets, that will be analyzed with a linear model, included the extreme poverty rates of 159 countries, defined as the percentage of people with an income below \$2.15 per day, and the material footprints of 169 countries, defined as the tonnes of raw materials required to meet a countries consumption demands per capita (UNSD, n.d.). The material footprint dataset includes information from 1970 until 2019 and the poverty rate dataset includes information from 1963 until 2022. Due to this discrepancy, we will only consider the relationship between these variables within the timeframe of 1970 to 2019. Material footprint is a popular metric to consider, along with carbon footprint and GDP, when analyzing a country’s productivity and impact on the planet. The United Nations (UN) touches on material footprint in its 12th of 17 Sustainable Development Goals, “Ensur\[ing\] Sustainable Consumption and Production Patterns” (UNSD, n.d.). They discuss their intent to decrease the global material footprint, which has been rapidly rising in the past few decades. Specifically, the UN has noted that many high-income countries have increasing material footprints that are supported by imported raw materials from poorer countries. This results in a much higher footprint in wealthier countries, and lower footprints as wealth decreases, as visualized in Figure 1.
 
@@ -34,7 +34,7 @@ footprint_date<-read.csv("matfootp_cap.csv")
 
 ```
 
-### Cleaning, Pivoting, and Joining
+## Cleaning, Pivoting, and Joining
 
 The two datasets did not include information from the same period of years. However, both included data from 1970 to 2019, so these years were selected for analysis. Additionally, the data was originally in a wide format, so both were pivoted into a longer format in order to only have columns representing “country”, “year”, and “percentage of people below \$2.15 a day” or “material footprint per capita (tonnes)” respectively. The material footprint dataset also had a “X” string before each year, which had to be removed in order to be properly joined with the poverty dataset’s year variable. Once both datasets were formatted, they were joined off of the “country” and “year” variables to synthesize them into one dataset, now including both variables of interest. All n/a values were then filtered out of the new dataset. Finally, both of the variables of interest were converted to numeric in order to ensure that a quantitative linear analysis would function properly.
 
@@ -63,9 +63,9 @@ footprint_date <- footprint_date |>
            as.numeric(year))
 ```
 
-## Linear Regression
+# Linear Regression
 
-### Data Visualization
+## Data Visualization
 
 ```{r}
 first_model <- footprint_date |>
@@ -109,7 +109,46 @@ plot_time <- footprint_date_new |>
 plot_time
 ```
 
-# Calculate variances
+## Linear Regression
+
+```{r}
+footprint_data_regression <- footprint_date_new %>%
+  group_by(country) %>%
+  summarise(
+    avg_footprint = mean(footprint, na.rm = TRUE),
+    avg_poverty_perc = mean(poverty_perc, na.rm = TRUE)
+  )
+
+lin_mod <- lm(avg_footprint ~ avg_poverty_perc, data = footprint_data_regression)
+
+# Summary of the linear regression model
+summary(lin_mod)
+
+ggplot(footprint_data_regression, aes(x = avg_poverty_perc, y = avg_footprint)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
+  labs(x = "% of people below $2.15 a day",
+       y = "Material footprint per capita (tonnes)",
+       title = "Relationship between Poverty Rate and Material Footprint")
+```
+
+### Interpretation of the Regression Model
+
+The linear regression model can be expressed as:
+
+Material footprint per-capita of a country = 19.33268 - (0.32689 for every 1% more of people who earn below \$2.15 per day) + error term
+
+From the summary of the model, we get the estimates for 𝛽0 (intercept) and 𝛽1​ (slope) as shown in the summary(lin_mod) output above. To simplify our analysis, each country's poverty percentage and footprint were averaged over time, so each country only had one x and one y value.
+
+Interpretation:
+
+-   **Intercept** (β0​) of 19.33268: This represents the estimated material footprint per capita when the poverty rate is 0%. It provides the baseline material footprint regardless of the poverty rate. This number does not have any material meanings as the intercept for a regression equation is just a mathematical modeling tool
+
+-   **Slope** (𝛽1​) of -0.32689: This indicates the change in material footprint per capita for each one percentage point increase in the poverty rate. A negative β1​ suggests that as the poverty rate increases, the material footprint per capita decreases, which aligns with the hypothesis that poorer countries consume fewer materials per capita.
+
+## Model Fit
+
+### Calculate variances
 
 ```{r}
 response_variance <- var(footprint_date_new$log_footprint)
@@ -118,13 +157,13 @@ fitted_variance <- var(fitted_values)
 residuals_variance <- var(residuals(lin_mod_log))
 ```
 
-# Data frame for the variances
+### Data frame for the variances
 
 ```{r}
 variance_table <- data.frame(  `Variance Type` = c("Response Values", "Fitted Values", "Residuals"),  `Variance` = c(response_variance, fitted_variance, residuals_variance))
 ```
 
-# Table
+### Table
 
 ```{r}
 variance_table |>  kable("html", col.names = c("Variance Type", "Variance"), digits = 4) |>  
@@ -132,12 +171,10 @@ kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condens
 row_spec(0, bold = TRUE, color = "white", background = "turquoise")
 ```
 
-# Get the R-squared value
+### Get the R-squared value
 
 ```{r}
 r_squared <- summary(lin_mod_log)$r.squared
 ```
 
-The Response Values from our regression model have a variability of 0.7733. A higher variance indicates a greater dispersion of the data points from the mean of the response variables. With a variability of 0.7733, our response values have a moderate level of variability from the mean.
-A variance of 0.3497 in our fitted values. With such a small variance, this indicates that the model does not explain a significant portion of variability in the response variable.
-A variance of 0.4236 indicates that a models predictions are not close to the actual observations, which means that our model may not be the best for representing this data.
+The Response Values from our regression model have a variability of 0.7733. A higher variance indicates a greater dispersion of the data points from the mean of the response variables. With a variability of 0.7733, our response values have a moderate level of variability from the mean. A variance of 0.3497 in our fitted values. With such a small variance, this indicates that the model does not explain a significant portion of variability in the response variable. A variance of 0.4236 indicates that a models predictions are not close to the actual observations, which means that our model may not be the best for representing this data.
