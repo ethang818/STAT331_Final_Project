@@ -3353,6 +3353,7 @@ border: 0;
 
 <section id="data-description-and-initial-assumptions" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Data Description and Initial Assumptions</h1>
+<p>change</p>
 <p>The two datasets, that will be analyzed with a linear model, included the extreme poverty rates of 159 countries, defined as the percentage of people with an income below $2.15 per day, and the material footprints of 169 countries, defined as the tonnes of raw materials required to meet a countries consumption demands per capita (UNSD, n.d.). The material footprint dataset includes information from 1970 until 2019 and the poverty rate dataset includes information from 1963 until 2022. Due to this discrepancy, we will only consider the relationship between these variables within the timeframe of 1970 to 2019. Material footprint is a popular metric to consider, along with carbon footprint and GDP, when analyzing a country’s productivity and impact on the planet. The United Nations (UN) touches on material footprint in its 12th of 17 Sustainable Development Goals, “Ensur[ing] Sustainable Consumption and Production Patterns” (UNSD, n.d.). They discuss their intent to decrease the global material footprint, which has been rapidly rising in the past few decades. Specifically, the UN has noted that many high-income countries have increasing material footprints that are supported by imported raw materials from poorer countries. This results in a much higher footprint in wealthier countries, and lower footprints as wealth decreases, as visualized in Figure 1.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -4152,166 +4153,168 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data Description and Initial Assumptions</span></span>
 <span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>The two datasets, that will be analyzed with a linear model, included the extreme poverty rates of 159 countries, defined as the percentage of people with an income below \$2.15 per day, and the material footprints of 169 countries, defined as the tonnes of raw materials required to meet a countries consumption demands per capita (UNSD, n.d.). The material footprint dataset includes information from 1970 until 2019 and the poverty rate dataset includes information from 1963 until 2022. Due to this discrepancy, we will only consider the relationship between these variables within the timeframe of 1970 to 2019. Material footprint is a popular metric to consider, along with carbon footprint and GDP, when analyzing a country’s productivity and impact on the planet. The United Nations (UN) touches on material footprint in its 12th of 17 Sustainable Development Goals, “Ensur<span class="sc">\[</span>ing<span class="sc">\]</span> Sustainable Consumption and Production Patterns” (UNSD, n.d.). They discuss their intent to decrease the global material footprint, which has been rapidly rising in the past few decades. Specifically, the UN has noted that many high-income countries have increasing material footprints that are supported by imported raw materials from poorer countries. This results in a much higher footprint in wealthier countries, and lower footprints as wealth decreases, as visualized in Figure 1.</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>change</span>
 <span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Figure 1. Material footprint per capita (tonnes) from 2000 to 2017, across varying income levels and the global average (UNSD, n.d.).](images/Screenshot%202024-05-27%20110017.png)</span><span class="co">](https://unstats.un.org/sdgs/report/2019/goal-12/#:~:text=%E2%80%9CMaterial%20footprint%E2%80%9D%20refers%20to%20the,the%20material%20needs%20of%20people.)</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>The two datasets, that will be analyzed with a linear model, included the extreme poverty rates of 159 countries, defined as the percentage of people with an income below \$2.15 per day, and the material footprints of 169 countries, defined as the tonnes of raw materials required to meet a countries consumption demands per capita (UNSD, n.d.). The material footprint dataset includes information from 1970 until 2019 and the poverty rate dataset includes information from 1963 until 2022. Due to this discrepancy, we will only consider the relationship between these variables within the timeframe of 1970 to 2019. Material footprint is a popular metric to consider, along with carbon footprint and GDP, when analyzing a country’s productivity and impact on the planet. The United Nations (UN) touches on material footprint in its 12th of 17 Sustainable Development Goals, “Ensur<span class="sc">\[</span>ing<span class="sc">\]</span> Sustainable Consumption and Production Patterns” (UNSD, n.d.). They discuss their intent to decrease the global material footprint, which has been rapidly rising in the past few decades. Specifically, the UN has noted that many high-income countries have increasing material footprints that are supported by imported raw materials from poorer countries. This results in a much higher footprint in wealthier countries, and lower footprints as wealth decreases, as visualized in Figure 1.</span>
 <span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>With extreme poverty rate as our explanatory variable, and the established relationship between income and material footprint, it is safe to assume that our linear relationship will follow a similar trend. As extreme poverty percentage increases, it is expected that material consumption will decrease.</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Figure 1. Material footprint per capita (tonnes) from 2000 to 2017, across varying income levels and the global average (UNSD, n.d.).](images/Screenshot%202024-05-27%20110017.png)</span><span class="co">](https://unstats.un.org/sdgs/report/2019/goal-12/#:~:text=%E2%80%9CMaterial%20footprint%E2%80%9D%20refers%20to%20the,the%20material%20needs%20of%20people.)</span></span>
 <span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, setup}</span></span>
-<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
-<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="in">library(broom)</span></span>
-<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a><span class="in">library(kableExtra)</span></span>
-<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a><span class="in">poverty_data&lt;-read_csv(&quot;extreme_poverty_percent_people_below_215_a_day.csv&quot;)</span></span>
-<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a><span class="in">footprint_date&lt;-read.csv(&quot;matfootp_cap.csv&quot;)</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>With extreme poverty rate as our explanatory variable, and the established relationship between income and material footprint, it is safe to assume that our linear relationship will follow a similar trend. As extreme poverty percentage increases, it is expected that material consumption will decrease.</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, setup}</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a><span class="in">library(broom)</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="in">library(kableExtra)</span></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a><span class="in">poverty_data&lt;-read_csv(&quot;extreme_poverty_percent_people_below_215_a_day.csv&quot;)</span></span>
 <span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a><span class="in">footprint_date&lt;-read.csv(&quot;matfootp_cap.csv&quot;)</span></span>
 <span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cleaning, Pivoting, and Joining</span></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>The two datasets did not include information from the same period of years. However, both included data from 1970 to 2019, so these years were selected for analysis. Additionally, the data was originally in a wide format, so both were pivoted into a longer format in order to only have columns representing “country”, “year”, and “percentage of people below \$2.15 a day” or “material footprint per capita (tonnes)” respectively. The material footprint dataset also had a “X” string before each year, which had to be removed in order to be properly joined with the poverty dataset’s year variable. Once both datasets were formatted, they were joined off of the “country” and “year” variables to synthesize them into one dataset, now including both variables of interest. All n/a values were then filtered out of the new dataset. Finally, both of the variables of interest were converted to numeric in order to ensure that a quantitative linear analysis would function properly.</span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cleaning, Pivoting, and Joining</span></span>
 <span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>poverty_data <span class="ot">&lt;-</span> poverty_data <span class="sc">|&gt;</span></span>
-<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, <span class="st">&quot;1970&quot;</span><span class="sc">:</span><span class="st">&quot;2019&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">&quot;1970&quot;</span><span class="sc">:</span><span class="st">&quot;2019&quot;</span>,</span>
-<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;year&quot;</span>,</span>
-<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;% people below $2.15 a day&quot;</span>)</span>
-<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-54"><a href="#cb18-54" aria-hidden="true" tabindex="-1"></a>footprint_date <span class="ot">&lt;-</span> footprint_date <span class="sc">|&gt;</span></span>
-<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="sc">~</span> <span class="fu">str_remove</span>(., <span class="st">&quot;^X&quot;</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">&quot;1970&quot;</span><span class="sc">:</span><span class="st">&quot;2019&quot;</span>,</span>
-<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;year&quot;</span>,</span>
-<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;material footprint per capita (tonnes)&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb18-59"><a href="#cb18-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(poverty_data, <span class="fu">join_by</span>(country, year)) <span class="sc">|&gt;</span></span>
-<span id="cb18-60"><a href="#cb18-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">% people below $2.15 a day</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb18-61"><a href="#cb18-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">material footprint per capita (tonnes)</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb18-62"><a href="#cb18-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">% people below $2.15 a day</span><span class="st">`</span> <span class="ot">=</span></span>
-<span id="cb18-63"><a href="#cb18-63" aria-hidden="true" tabindex="-1"></a>           <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">% people below $2.15 a day</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb18-64"><a href="#cb18-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">material footprint per capita (tonnes)</span><span class="st">`</span> <span class="ot">=</span></span>
-<span id="cb18-65"><a href="#cb18-65" aria-hidden="true" tabindex="-1"></a>           <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">material footprint per capita (tonnes)</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb18-66"><a href="#cb18-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span></span>
-<span id="cb18-67"><a href="#cb18-67" aria-hidden="true" tabindex="-1"></a>           <span class="fu">as.numeric</span>(year))</span>
-<span id="cb18-68"><a href="#cb18-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-69"><a href="#cb18-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-70"><a href="#cb18-70" aria-hidden="true" tabindex="-1"></a><span class="fu"># Linear Regression</span></span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>The two datasets did not include information from the same period of years. However, both included data from 1970 to 2019, so these years were selected for analysis. Additionally, the data was originally in a wide format, so both were pivoted into a longer format in order to only have columns representing “country”, “year”, and “percentage of people below \$2.15 a day” or “material footprint per capita (tonnes)” respectively. The material footprint dataset also had a “X” string before each year, which had to be removed in order to be properly joined with the poverty dataset’s year variable. Once both datasets were formatted, they were joined off of the “country” and “year” variables to synthesize them into one dataset, now including both variables of interest. All n/a values were then filtered out of the new dataset. Finally, both of the variables of interest were converted to numeric in order to ensure that a quantitative linear analysis would function properly.</span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a>poverty_data <span class="ot">&lt;-</span> poverty_data <span class="sc">|&gt;</span></span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, <span class="st">&quot;1970&quot;</span><span class="sc">:</span><span class="st">&quot;2019&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">&quot;1970&quot;</span><span class="sc">:</span><span class="st">&quot;2019&quot;</span>,</span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;year&quot;</span>,</span>
+<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;% people below $2.15 a day&quot;</span>)</span>
+<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a>footprint_date <span class="ot">&lt;-</span> footprint_date <span class="sc">|&gt;</span></span>
+<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="sc">~</span> <span class="fu">str_remove</span>(., <span class="st">&quot;^X&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">&quot;1970&quot;</span><span class="sc">:</span><span class="st">&quot;2019&quot;</span>,</span>
+<span id="cb18-59"><a href="#cb18-59" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;year&quot;</span>,</span>
+<span id="cb18-60"><a href="#cb18-60" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;material footprint per capita (tonnes)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-61"><a href="#cb18-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(poverty_data, <span class="fu">join_by</span>(country, year)) <span class="sc">|&gt;</span></span>
+<span id="cb18-62"><a href="#cb18-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">% people below $2.15 a day</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-63"><a href="#cb18-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">material footprint per capita (tonnes)</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-64"><a href="#cb18-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">% people below $2.15 a day</span><span class="st">`</span> <span class="ot">=</span></span>
+<span id="cb18-65"><a href="#cb18-65" aria-hidden="true" tabindex="-1"></a>           <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">% people below $2.15 a day</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-66"><a href="#cb18-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">material footprint per capita (tonnes)</span><span class="st">`</span> <span class="ot">=</span></span>
+<span id="cb18-67"><a href="#cb18-67" aria-hidden="true" tabindex="-1"></a>           <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">material footprint per capita (tonnes)</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-68"><a href="#cb18-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span></span>
+<span id="cb18-69"><a href="#cb18-69" aria-hidden="true" tabindex="-1"></a>           <span class="fu">as.numeric</span>(year))</span>
+<span id="cb18-70"><a href="#cb18-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-71"><a href="#cb18-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-72"><a href="#cb18-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Visualization</span></span>
+<span id="cb18-72"><a href="#cb18-72" aria-hidden="true" tabindex="-1"></a><span class="fu"># Linear Regression</span></span>
 <span id="cb18-73"><a href="#cb18-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-76"><a href="#cb18-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-77"><a href="#cb18-77" aria-hidden="true" tabindex="-1"></a>first_model <span class="ot">&lt;-</span> footprint_date <span class="sc">|&gt;</span></span>
-<span id="cb18-78"><a href="#cb18-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">% people below $2.15 a day</span><span class="st">`</span>, </span>
-<span id="cb18-79"><a href="#cb18-79" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">material footprint per capita (tonnes)</span><span class="st">`</span>)) <span class="sc">+</span></span>
-<span id="cb18-80"><a href="#cb18-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb18-81"><a href="#cb18-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x)</span>
-<span id="cb18-82"><a href="#cb18-82" aria-hidden="true" tabindex="-1"></a>first_model</span>
-<span id="cb18-83"><a href="#cb18-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-84"><a href="#cb18-84" aria-hidden="true" tabindex="-1"></a>lin_mod1 <span class="ot">&lt;-</span></span>
-<span id="cb18-85"><a href="#cb18-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(<span class="st">`</span><span class="at">material footprint per capita (tonnes)</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">% people below $2.15 a day</span><span class="st">`</span>, <span class="at">data =</span> footprint_date)</span>
-<span id="cb18-86"><a href="#cb18-86" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lin_mod1)</span>
-<span id="cb18-87"><a href="#cb18-87" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-88"><a href="#cb18-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-91"><a href="#cb18-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-92"><a href="#cb18-92" aria-hidden="true" tabindex="-1"></a>footprint_date_new <span class="ot">&lt;-</span> footprint_date <span class="sc">|&gt;</span></span>
-<span id="cb18-93"><a href="#cb18-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">footprint =</span> <span class="st">`</span><span class="at">material footprint per capita (tonnes)</span><span class="st">`</span>, </span>
-<span id="cb18-94"><a href="#cb18-94" aria-hidden="true" tabindex="-1"></a>         <span class="at">poverty_perc =</span> <span class="st">`</span><span class="at">% people below $2.15 a day</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
-<span id="cb18-95"><a href="#cb18-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">log_footprint =</span> <span class="fu">log</span>(footprint))</span>
-<span id="cb18-96"><a href="#cb18-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a>  log_model <span class="ot">&lt;-</span> footprint_date_new <span class="sc">|&gt;</span></span>
-<span id="cb18-98"><a href="#cb18-98" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> poverty_perc, </span>
-<span id="cb18-99"><a href="#cb18-99" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> log_footprint)) <span class="sc">+</span></span>
-<span id="cb18-100"><a href="#cb18-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb18-101"><a href="#cb18-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x)</span>
-<span id="cb18-102"><a href="#cb18-102" aria-hidden="true" tabindex="-1"></a>log_model</span>
-<span id="cb18-103"><a href="#cb18-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-104"><a href="#cb18-104" aria-hidden="true" tabindex="-1"></a>lin_mod_log <span class="ot">&lt;-</span></span>
-<span id="cb18-105"><a href="#cb18-105" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(log_footprint <span class="sc">~</span> poverty_perc, <span class="at">data =</span> footprint_date_new)</span>
-<span id="cb18-106"><a href="#cb18-106" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lin_mod_log)</span>
-<span id="cb18-107"><a href="#cb18-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-108"><a href="#cb18-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-111"><a href="#cb18-111" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-112"><a href="#cb18-112" aria-hidden="true" tabindex="-1"></a>plot_time <span class="ot">&lt;-</span> footprint_date_new <span class="sc">|&gt;</span></span>
-<span id="cb18-113"><a href="#cb18-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decade =</span>  <span class="dv">10</span> <span class="sc">*</span> <span class="fu">floor</span>(year<span class="sc">/</span><span class="dv">10</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb18-114"><a href="#cb18-114" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> poverty_perc, </span>
-<span id="cb18-115"><a href="#cb18-115" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> log_footprint)) <span class="sc">+</span></span>
-<span id="cb18-116"><a href="#cb18-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb18-117"><a href="#cb18-117" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y <span class="sc">~</span> x) <span class="sc">+</span></span>
-<span id="cb18-118"><a href="#cb18-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> decade)</span>
-<span id="cb18-119"><a href="#cb18-119" aria-hidden="true" tabindex="-1"></a>plot_time</span>
-<span id="cb18-120"><a href="#cb18-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-121"><a href="#cb18-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-122"><a href="#cb18-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## Linear Regression</span></span>
+<span id="cb18-74"><a href="#cb18-74" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Visualization</span></span>
+<span id="cb18-75"><a href="#cb18-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-78"><a href="#cb18-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-79"><a href="#cb18-79" aria-hidden="true" tabindex="-1"></a>first_model <span class="ot">&lt;-</span> footprint_date <span class="sc">|&gt;</span></span>
+<span id="cb18-80"><a href="#cb18-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">% people below $2.15 a day</span><span class="st">`</span>, </span>
+<span id="cb18-81"><a href="#cb18-81" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">material footprint per capita (tonnes)</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb18-82"><a href="#cb18-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb18-83"><a href="#cb18-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x)</span>
+<span id="cb18-84"><a href="#cb18-84" aria-hidden="true" tabindex="-1"></a>first_model</span>
+<span id="cb18-85"><a href="#cb18-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-86"><a href="#cb18-86" aria-hidden="true" tabindex="-1"></a>lin_mod1 <span class="ot">&lt;-</span></span>
+<span id="cb18-87"><a href="#cb18-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(<span class="st">`</span><span class="at">material footprint per capita (tonnes)</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">% people below $2.15 a day</span><span class="st">`</span>, <span class="at">data =</span> footprint_date)</span>
+<span id="cb18-88"><a href="#cb18-88" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lin_mod1)</span>
+<span id="cb18-89"><a href="#cb18-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-90"><a href="#cb18-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-93"><a href="#cb18-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-94"><a href="#cb18-94" aria-hidden="true" tabindex="-1"></a>footprint_date_new <span class="ot">&lt;-</span> footprint_date <span class="sc">|&gt;</span></span>
+<span id="cb18-95"><a href="#cb18-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">footprint =</span> <span class="st">`</span><span class="at">material footprint per capita (tonnes)</span><span class="st">`</span>, </span>
+<span id="cb18-96"><a href="#cb18-96" aria-hidden="true" tabindex="-1"></a>         <span class="at">poverty_perc =</span> <span class="st">`</span><span class="at">% people below $2.15 a day</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">log_footprint =</span> <span class="fu">log</span>(footprint))</span>
+<span id="cb18-98"><a href="#cb18-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-99"><a href="#cb18-99" aria-hidden="true" tabindex="-1"></a>  log_model <span class="ot">&lt;-</span> footprint_date_new <span class="sc">|&gt;</span></span>
+<span id="cb18-100"><a href="#cb18-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> poverty_perc, </span>
+<span id="cb18-101"><a href="#cb18-101" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> log_footprint)) <span class="sc">+</span></span>
+<span id="cb18-102"><a href="#cb18-102" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb18-103"><a href="#cb18-103" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x)</span>
+<span id="cb18-104"><a href="#cb18-104" aria-hidden="true" tabindex="-1"></a>log_model</span>
+<span id="cb18-105"><a href="#cb18-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-106"><a href="#cb18-106" aria-hidden="true" tabindex="-1"></a>lin_mod_log <span class="ot">&lt;-</span></span>
+<span id="cb18-107"><a href="#cb18-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(log_footprint <span class="sc">~</span> poverty_perc, <span class="at">data =</span> footprint_date_new)</span>
+<span id="cb18-108"><a href="#cb18-108" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lin_mod_log)</span>
+<span id="cb18-109"><a href="#cb18-109" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-110"><a href="#cb18-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-113"><a href="#cb18-113" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-114"><a href="#cb18-114" aria-hidden="true" tabindex="-1"></a>plot_time <span class="ot">&lt;-</span> footprint_date_new <span class="sc">|&gt;</span></span>
+<span id="cb18-115"><a href="#cb18-115" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decade =</span>  <span class="dv">10</span> <span class="sc">*</span> <span class="fu">floor</span>(year<span class="sc">/</span><span class="dv">10</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-116"><a href="#cb18-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> poverty_perc, </span>
+<span id="cb18-117"><a href="#cb18-117" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> log_footprint)) <span class="sc">+</span></span>
+<span id="cb18-118"><a href="#cb18-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb18-119"><a href="#cb18-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y <span class="sc">~</span> x) <span class="sc">+</span></span>
+<span id="cb18-120"><a href="#cb18-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> decade)</span>
+<span id="cb18-121"><a href="#cb18-121" aria-hidden="true" tabindex="-1"></a>plot_time</span>
+<span id="cb18-122"><a href="#cb18-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-123"><a href="#cb18-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-126"><a href="#cb18-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-127"><a href="#cb18-127" aria-hidden="true" tabindex="-1"></a>footprint_data_regression <span class="ot">&lt;-</span> footprint_date_new <span class="sc">%&gt;%</span></span>
-<span id="cb18-128"><a href="#cb18-128" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
-<span id="cb18-129"><a href="#cb18-129" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb18-130"><a href="#cb18-130" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_footprint =</span> <span class="fu">mean</span>(footprint, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb18-131"><a href="#cb18-131" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_poverty_perc =</span> <span class="fu">mean</span>(poverty_perc, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb18-132"><a href="#cb18-132" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb18-133"><a href="#cb18-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-134"><a href="#cb18-134" aria-hidden="true" tabindex="-1"></a>lin_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(avg_footprint <span class="sc">~</span> avg_poverty_perc, <span class="at">data =</span> footprint_data_regression)</span>
+<span id="cb18-124"><a href="#cb18-124" aria-hidden="true" tabindex="-1"></a><span class="fu">## Linear Regression</span></span>
+<span id="cb18-125"><a href="#cb18-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-128"><a href="#cb18-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-129"><a href="#cb18-129" aria-hidden="true" tabindex="-1"></a>footprint_data_regression <span class="ot">&lt;-</span> footprint_date_new <span class="sc">%&gt;%</span></span>
+<span id="cb18-130"><a href="#cb18-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb18-131"><a href="#cb18-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb18-132"><a href="#cb18-132" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_footprint =</span> <span class="fu">mean</span>(footprint, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb18-133"><a href="#cb18-133" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_poverty_perc =</span> <span class="fu">mean</span>(poverty_perc, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-134"><a href="#cb18-134" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb18-135"><a href="#cb18-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-136"><a href="#cb18-136" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary of the linear regression model</span></span>
-<span id="cb18-137"><a href="#cb18-137" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lin_mod)</span>
-<span id="cb18-138"><a href="#cb18-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-139"><a href="#cb18-139" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(footprint_data_regression, <span class="fu">aes</span>(<span class="at">x =</span> avg_poverty_perc, <span class="at">y =</span> avg_footprint)) <span class="sc">+</span></span>
-<span id="cb18-140"><a href="#cb18-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb18-141"><a href="#cb18-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb18-142"><a href="#cb18-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;% of people below $2.15 a day&quot;</span>,</span>
-<span id="cb18-143"><a href="#cb18-143" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Material footprint per capita (tonnes)&quot;</span>,</span>
-<span id="cb18-144"><a href="#cb18-144" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Relationship between Poverty Rate and Material Footprint&quot;</span>)</span>
-<span id="cb18-145"><a href="#cb18-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-146"><a href="#cb18-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-147"><a href="#cb18-147" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interpretation of the Regression Model</span></span>
+<span id="cb18-136"><a href="#cb18-136" aria-hidden="true" tabindex="-1"></a>lin_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(avg_footprint <span class="sc">~</span> avg_poverty_perc, <span class="at">data =</span> footprint_data_regression)</span>
+<span id="cb18-137"><a href="#cb18-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-138"><a href="#cb18-138" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary of the linear regression model</span></span>
+<span id="cb18-139"><a href="#cb18-139" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lin_mod)</span>
+<span id="cb18-140"><a href="#cb18-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-141"><a href="#cb18-141" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(footprint_data_regression, <span class="fu">aes</span>(<span class="at">x =</span> avg_poverty_perc, <span class="at">y =</span> avg_footprint)) <span class="sc">+</span></span>
+<span id="cb18-142"><a href="#cb18-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb18-143"><a href="#cb18-143" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb18-144"><a href="#cb18-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;% of people below $2.15 a day&quot;</span>,</span>
+<span id="cb18-145"><a href="#cb18-145" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Material footprint per capita (tonnes)&quot;</span>,</span>
+<span id="cb18-146"><a href="#cb18-146" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Relationship between Poverty Rate and Material Footprint&quot;</span>)</span>
+<span id="cb18-147"><a href="#cb18-147" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-148"><a href="#cb18-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-149"><a href="#cb18-149" aria-hidden="true" tabindex="-1"></a>The linear regression model can be expressed as:</span>
+<span id="cb18-149"><a href="#cb18-149" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interpretation of the Regression Model</span></span>
 <span id="cb18-150"><a href="#cb18-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-151"><a href="#cb18-151" aria-hidden="true" tabindex="-1"></a>Material footprint per-capita of a country = 19.33268 - (0.32689 for every 1% more of people who earn below \$2.15 per day) + error term</span>
+<span id="cb18-151"><a href="#cb18-151" aria-hidden="true" tabindex="-1"></a>The linear regression model can be expressed as:</span>
 <span id="cb18-152"><a href="#cb18-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-153"><a href="#cb18-153" aria-hidden="true" tabindex="-1"></a>From the summary of the model, we get the estimates for 𝛽0 (intercept) and 𝛽1​ (slope) as shown in the summary(lin_mod) output above. To simplify our analysis, each country&#39;s poverty percentage and footprint were averaged over time, so each country only had one x and one y value.</span>
+<span id="cb18-153"><a href="#cb18-153" aria-hidden="true" tabindex="-1"></a>Material footprint per-capita of a country = 19.33268 - (0.32689 for every 1% more of people who earn below \$2.15 per day) + error term</span>
 <span id="cb18-154"><a href="#cb18-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-155"><a href="#cb18-155" aria-hidden="true" tabindex="-1"></a>Interpretation:</span>
+<span id="cb18-155"><a href="#cb18-155" aria-hidden="true" tabindex="-1"></a>From the summary of the model, we get the estimates for 𝛽0 (intercept) and 𝛽1​ (slope) as shown in the summary(lin_mod) output above. To simplify our analysis, each country&#39;s poverty percentage and footprint were averaged over time, so each country only had one x and one y value.</span>
 <span id="cb18-156"><a href="#cb18-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-157"><a href="#cb18-157" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Intercept** (β0​) of 19.33268: This represents the estimated material footprint per capita when the poverty rate is 0%. It provides the baseline material footprint regardless of the poverty rate. This number does not have any material meanings as the intercept for a regression equation is just a mathematical modeling tool</span>
+<span id="cb18-157"><a href="#cb18-157" aria-hidden="true" tabindex="-1"></a>Interpretation:</span>
 <span id="cb18-158"><a href="#cb18-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-159"><a href="#cb18-159" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Slope** (𝛽1​) of -0.32689: This indicates the change in material footprint per capita for each one percentage point increase in the poverty rate. A negative β1​ suggests that as the poverty rate increases, the material footprint per capita decreases, which aligns with the hypothesis that poorer countries consume fewer materials per capita.</span>
+<span id="cb18-159"><a href="#cb18-159" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Intercept** (β0​) of 19.33268: This represents the estimated material footprint per capita when the poverty rate is 0%. It provides the baseline material footprint regardless of the poverty rate. This number does not have any material meanings as the intercept for a regression equation is just a mathematical modeling tool</span>
 <span id="cb18-160"><a href="#cb18-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-161"><a href="#cb18-161" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model Fit</span></span>
+<span id="cb18-161"><a href="#cb18-161" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Slope** (𝛽1​) of -0.32689: This indicates the change in material footprint per capita for each one percentage point increase in the poverty rate. A negative β1​ suggests that as the poverty rate increases, the material footprint per capita decreases, which aligns with the hypothesis that poorer countries consume fewer materials per capita.</span>
 <span id="cb18-162"><a href="#cb18-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-163"><a href="#cb18-163" aria-hidden="true" tabindex="-1"></a><span class="fu">### Calculate variances</span></span>
+<span id="cb18-163"><a href="#cb18-163" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model Fit</span></span>
 <span id="cb18-164"><a href="#cb18-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-167"><a href="#cb18-167" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-168"><a href="#cb18-168" aria-hidden="true" tabindex="-1"></a>response_variance <span class="ot">&lt;-</span> <span class="fu">var</span>(footprint_date_new<span class="sc">$</span>log_footprint)</span>
-<span id="cb18-169"><a href="#cb18-169" aria-hidden="true" tabindex="-1"></a>fitted_values <span class="ot">&lt;-</span> <span class="fu">fitted</span>(lin_mod_log)</span>
-<span id="cb18-170"><a href="#cb18-170" aria-hidden="true" tabindex="-1"></a>fitted_variance <span class="ot">&lt;-</span> <span class="fu">var</span>(fitted_values)</span>
-<span id="cb18-171"><a href="#cb18-171" aria-hidden="true" tabindex="-1"></a>residuals_variance <span class="ot">&lt;-</span> <span class="fu">var</span>(<span class="fu">residuals</span>(lin_mod_log))</span>
-<span id="cb18-172"><a href="#cb18-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-173"><a href="#cb18-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-174"><a href="#cb18-174" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data frame for the variances</span></span>
+<span id="cb18-165"><a href="#cb18-165" aria-hidden="true" tabindex="-1"></a><span class="fu">### Calculate variances</span></span>
+<span id="cb18-166"><a href="#cb18-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-169"><a href="#cb18-169" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-170"><a href="#cb18-170" aria-hidden="true" tabindex="-1"></a>response_variance <span class="ot">&lt;-</span> <span class="fu">var</span>(footprint_date_new<span class="sc">$</span>log_footprint)</span>
+<span id="cb18-171"><a href="#cb18-171" aria-hidden="true" tabindex="-1"></a>fitted_values <span class="ot">&lt;-</span> <span class="fu">fitted</span>(lin_mod_log)</span>
+<span id="cb18-172"><a href="#cb18-172" aria-hidden="true" tabindex="-1"></a>fitted_variance <span class="ot">&lt;-</span> <span class="fu">var</span>(fitted_values)</span>
+<span id="cb18-173"><a href="#cb18-173" aria-hidden="true" tabindex="-1"></a>residuals_variance <span class="ot">&lt;-</span> <span class="fu">var</span>(<span class="fu">residuals</span>(lin_mod_log))</span>
+<span id="cb18-174"><a href="#cb18-174" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-175"><a href="#cb18-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-178"><a href="#cb18-178" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-179"><a href="#cb18-179" aria-hidden="true" tabindex="-1"></a>variance_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(  <span class="st">`</span><span class="at">Variance Type</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Response Values&quot;</span>, <span class="st">&quot;Fitted Values&quot;</span>, <span class="st">&quot;Residuals&quot;</span>),  <span class="st">`</span><span class="at">Variance</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(response_variance, fitted_variance, residuals_variance))</span>
-<span id="cb18-180"><a href="#cb18-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-181"><a href="#cb18-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-182"><a href="#cb18-182" aria-hidden="true" tabindex="-1"></a><span class="fu">### Table</span></span>
+<span id="cb18-176"><a href="#cb18-176" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data frame for the variances</span></span>
+<span id="cb18-177"><a href="#cb18-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-180"><a href="#cb18-180" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-181"><a href="#cb18-181" aria-hidden="true" tabindex="-1"></a>variance_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(  <span class="st">`</span><span class="at">Variance Type</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Response Values&quot;</span>, <span class="st">&quot;Fitted Values&quot;</span>, <span class="st">&quot;Residuals&quot;</span>),  <span class="st">`</span><span class="at">Variance</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(response_variance, fitted_variance, residuals_variance))</span>
+<span id="cb18-182"><a href="#cb18-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-183"><a href="#cb18-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-186"><a href="#cb18-186" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-187"><a href="#cb18-187" aria-hidden="true" tabindex="-1"></a>variance_table <span class="sc">|&gt;</span>  <span class="fu">kable</span>(<span class="st">&quot;html&quot;</span>, <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Variance Type&quot;</span>, <span class="st">&quot;Variance&quot;</span>), <span class="at">digits =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb18-188"><a href="#cb18-188" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_styling</span>(<span class="at">full_width =</span> F, <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>))<span class="sc">|&gt;</span>  </span>
-<span id="cb18-189"><a href="#cb18-189" aria-hidden="true" tabindex="-1"></a><span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">background =</span> <span class="st">&quot;turquoise&quot;</span>)</span>
-<span id="cb18-190"><a href="#cb18-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-191"><a href="#cb18-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-192"><a href="#cb18-192" aria-hidden="true" tabindex="-1"></a><span class="fu">### Get the R-squared value</span></span>
+<span id="cb18-184"><a href="#cb18-184" aria-hidden="true" tabindex="-1"></a><span class="fu">### Table</span></span>
+<span id="cb18-185"><a href="#cb18-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-188"><a href="#cb18-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-189"><a href="#cb18-189" aria-hidden="true" tabindex="-1"></a>variance_table <span class="sc">|&gt;</span>  <span class="fu">kable</span>(<span class="st">&quot;html&quot;</span>, <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Variance Type&quot;</span>, <span class="st">&quot;Variance&quot;</span>), <span class="at">digits =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb18-190"><a href="#cb18-190" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_styling</span>(<span class="at">full_width =</span> F, <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>))<span class="sc">|&gt;</span>  </span>
+<span id="cb18-191"><a href="#cb18-191" aria-hidden="true" tabindex="-1"></a><span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">background =</span> <span class="st">&quot;turquoise&quot;</span>)</span>
+<span id="cb18-192"><a href="#cb18-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-193"><a href="#cb18-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-196"><a href="#cb18-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-197"><a href="#cb18-197" aria-hidden="true" tabindex="-1"></a>r_squared <span class="ot">&lt;-</span> <span class="fu">summary</span>(lin_mod_log)<span class="sc">$</span>r.squared</span>
-<span id="cb18-198"><a href="#cb18-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-199"><a href="#cb18-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-200"><a href="#cb18-200" aria-hidden="true" tabindex="-1"></a>The Response Values from our regression model have a variability of 0.7733. A higher variance indicates a greater dispersion of the data points from the mean of the response variables. With a variability of 0.7733, our response values have a moderate level of variability from the mean. A variance of 0.3497 in our fitted values. With such a small variance, this indicates that the model does not explain a significant portion of variability in the response variable. A variance of 0.4236 indicates that a models predictions are not close to the actual observations, which means that our model may not be the best for representing this data.</span>
+<span id="cb18-194"><a href="#cb18-194" aria-hidden="true" tabindex="-1"></a><span class="fu">### Get the R-squared value</span></span>
+<span id="cb18-195"><a href="#cb18-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-198"><a href="#cb18-198" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-199"><a href="#cb18-199" aria-hidden="true" tabindex="-1"></a>r_squared <span class="ot">&lt;-</span> <span class="fu">summary</span>(lin_mod_log)<span class="sc">$</span>r.squared</span>
+<span id="cb18-200"><a href="#cb18-200" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-201"><a href="#cb18-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-202"><a href="#cb18-202" aria-hidden="true" tabindex="-1"></a>The Response Values from our regression model have a variability of 0.7733. A higher variance indicates a greater dispersion of the data points from the mean of the response variables. With a variability of 0.7733, our response values have a moderate level of variability from the mean. A variance of 0.3497 in our fitted values. With such a small variance, this indicates that the model does not explain a significant portion of variability in the response variable. A variance of 0.4236 indicates that a models predictions are not close to the actual observations, which means that our model may not be the best for representing this data.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
